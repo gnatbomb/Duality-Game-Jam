@@ -9,6 +9,7 @@ export (float) var gravity = 20
 export (float) var jumpForce = 450
 export (float,0,1) var friction = 0.325
 export var terminalVelocity = 250
+export (Vector2) var startPosition = Vector2(160, 96)
 
 #GLOBALS
 var velocity = Vector2.ZERO
@@ -57,6 +58,12 @@ func movementHandler(delta):
 	velocity.y += gravity
 	velocity.y = clamp(velocity.y,-jumpForce,terminalVelocity)
 
+func hitSpike():
+	print("youch!")
+	position = startPosition
+
+func hitSpring():
+	print("bounce!")
 	
 #---OLD OLD MOVE--
 #	if(input_vector!=Vector2.ZERO):

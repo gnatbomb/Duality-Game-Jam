@@ -16,7 +16,6 @@ func _ready():
 #	pass
 
 
-func _on_Spikes_body_entered(body):
+func _on_Springs_body_entered(body):
 	if body.get_name() == "Player":
-		body.hitSpike()
-		
+		body.hitSpring()

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Prefabs/Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Prefabs/TileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Prefabs/Spikes.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Prefabs/Springs.tscn" type="PackedScene" id=5]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -28,5 +30,18 @@ position = Vector2( 615.619, 150.561 )
 [node name="Platform6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 582.245, 150.561 )
 
-[node name="TileMap" parent="." instance=ExtResource( 3 )]
-tile_data = PoolIntArray( 393217, 1, 0, 393218, 1, 0, 458753, 0, 0, 458755, 0, 0, 458757, 0, 0 )
+[node name="Tilemap" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 393217, 0, 0, 393219, 0, 0, 393221, 0, 0, 393223, 0, 0 )
+
+[node name="Spikes" parent="." instance=ExtResource( 4 )]
+
+[node name="SpikeMap" parent="Spikes" index="0"]
+tile_data = PoolIntArray( 327681, 0, 0, 327682, 0, 0 )
+
+[node name="Springs" parent="." instance=ExtResource( 5 )]
+
+[node name="SpringMap" parent="Springs" index="0"]
+tile_data = PoolIntArray( 327688, 0, 0 )
+
+[editable path="Spikes"]
+[editable path="Springs"]
