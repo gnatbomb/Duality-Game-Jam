@@ -1,6 +1,13 @@
 extends Node2D
 
-export (float) var player_speed = 100
+#EXPORTS
+export (float) var maxSpeed = 600
+export (float) var acceleration = 1000
+export (float) var deceleration = 2000
+
+#GLOBALS
+var direction = 0
+var inputDirection = 0
 
 func _ready():
 	pass # Replace with function body.
@@ -12,19 +19,10 @@ func _process(delta):
 
 func checkIput(delta):
 	if Input.is_action_pressed('w'):
-		var motionVector = Vector2.ZERO
-		motionVector.y = -player_speed
-		self.position += motionVector*delta
+		pass
 	if Input.is_action_pressed('a'):
-		var motionVector = Vector2.ZERO
-		motionVector.x = -player_speed
-		self.position += motionVector*delta
-	if Input.is_action_pressed('s'):
-		var motionVector = Vector2.ZERO
-		motionVector.y = player_speed
-		self.position += motionVector*delta
+		inputDirection = -1
 	if Input.is_action_pressed('d'):
-		var motionVector = Vector2.ZERO
-		motionVector.x = player_speed
-		self.position += motionVector*delta
-
+		inputDirection = 1
+	else:
+		inputDirection = 0
