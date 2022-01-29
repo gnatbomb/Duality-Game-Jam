@@ -10,19 +10,19 @@ position = Vector2( 160.813, 96.7304 )
 friction = 0.344
 
 [node name="Platform2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 159.939, 149.875 )
+position = Vector2( 127.388, 149.875 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 94.0139, 149.875 )
 
 [node name="Platform3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 28.0889, 149.875 )
+position = Vector2( 60.079, 149.875 )
 
 [node name="Platform4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 357.716, 149.875 )
+position = Vector2( 228.072, 149.314 )
 
 [node name="Platform5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 291.791, 149.875 )
+position = Vector2( 194.698, 149.875 )
 
 [node name="Platform6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 225.865, 149.875 )
+position = Vector2( 161.324, 149.875 )
