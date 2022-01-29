@@ -1,34 +1,34 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Prefabs/Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Prefabs/TileMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Prefabs/Spikes.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Prefabs/Springs.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Prefabs/Dresser.tscn" type="PackedScene" id=6]
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
+[node name="Platforms (old)" type="Node2D" parent="."]
 position = Vector2( 160.813, 96.7304 )
-friction = 0.344
 
-[node name="Platform2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 548.309, 150.561 )
+[node name="Platform2" parent="Platforms (old)" instance=ExtResource( 2 )]
+position = Vector2( 387.496, 53.8306 )
 
-[node name="Platform" parent="." instance=ExtResource( 2 )]
-position = Vector2( 514.935, 150.561 )
+[node name="Platform" parent="Platforms (old)" instance=ExtResource( 2 )]
+position = Vector2( 354.122, 53.8306 )
 
-[node name="Platform3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 481, 150.561 )
+[node name="Platform3" parent="Platforms (old)" instance=ExtResource( 2 )]
+position = Vector2( 320.187, 53.8306 )
 
-[node name="Platform4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 648.993, 150 )
+[node name="Platform4" parent="Platforms (old)" instance=ExtResource( 2 )]
+position = Vector2( 488.18, 53.2696 )
 
-[node name="Platform5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 615.619, 150.561 )
+[node name="Platform5" parent="Platforms (old)" instance=ExtResource( 2 )]
+position = Vector2( 454.806, 53.8306 )
 
-[node name="Platform6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 582.245, 150.561 )
+[node name="Platform6" parent="Platforms (old)" instance=ExtResource( 2 )]
+position = Vector2( 421.432, 53.8306 )
 
 [node name="Tilemap" parent="." instance=ExtResource( 3 )]
 tile_data = PoolIntArray( 393217, 0, 0, 393219, 0, 0, 393221, 0, 0, 393223, 0, 0 )
@@ -42,6 +42,12 @@ tile_data = PoolIntArray( 327681, 0, 0, 327682, 0, 0 )
 
 [node name="SpringMap" parent="Springs" index="0"]
 tile_data = PoolIntArray( 327688, 0, 0 )
+
+[node name="Dresser1" parent="." instance=ExtResource( 6 )]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160.813, 96.7304 )
+friction = 0.344
 
 [editable path="Spikes"]
 [editable path="Springs"]

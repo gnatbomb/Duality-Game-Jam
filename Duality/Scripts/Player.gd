@@ -9,13 +9,17 @@ export (float) var gravity = 20
 export (float) var jumpForce = 450
 export (float,0,1) var friction = 0.325
 export var terminalVelocity = 250
-export (Vector2) var startPosition = Vector2(160, 96)
+export (Vector2) var startPosition
 
 #GLOBALS
 var velocity = Vector2.ZERO
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+
+func _ready():
+	startPosition = get_parent().find_node("Dresser1").position
+	position = startPosition
 
 func _process(delta):
 	movementHandler(delta)
