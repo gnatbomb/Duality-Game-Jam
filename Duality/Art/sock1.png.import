@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_sock2jumpright.png-c2895313b7b8d3d774c410f3f1412b0c.stex"
+path="res://.import/sock1.png-1e95a601e913ea801d0b3f39802ecfd9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/spr_sock2jumpright.png"
-dest_files=[ "res://.import/spr_sock2jumpright.png-c2895313b7b8d3d774c410f3f1412b0c.stex" ]
+source_file="res://Art/sock1.png"
+dest_files=[ "res://.import/sock1.png-1e95a601e913ea801d0b3f39802ecfd9.stex" ]
 
 [params]
 
