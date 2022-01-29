@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="Duality-Game-Jam"
-run/main_scene="res://Scenes/MainMenu.tscn"
+run/main_scene="res://Scenes/Levels/TestScene.tscn"
 config/icon="res://icon.png"
+
+[global]
+
+main=false
 
 [input]
 
