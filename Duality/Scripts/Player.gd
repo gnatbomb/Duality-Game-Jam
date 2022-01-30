@@ -24,13 +24,14 @@ var victory = false
 var controlDict = {}
 onready var partner = get_node(partnerPath)
 onready var dresser = get_node(DresserPath)
+onready var collider = get_node("Area2D/searchBox")
 var alive = true
 
 func _ready():
 	_setControls()
 	
-func _physics_process(delta):
-	if (victory):
+func _process(delta):
+	if (alive and victory):
 		win()
 		
 	if(alive and outOfFrame()):
@@ -84,13 +85,14 @@ func inputHandler(delta):
 	
 	if(input_vector==Vector2.ZERO and on_floor):
 		animationState.travel("Idle")
-	elif(!on_floor and velocity.y>=7 and animationState.get_current_node()!="Fall"):
+	elif(!on_floor and velocity.y>=0 and animationState.get_current_node()!="Fall"):
 		animationState.travel("Fall")
 	
 	if(on_ceiling):
+		print("touched")
 		velocity.y = 0
 	
-	move_and_slide(velocity,FLOOR)
+	velocity = move_and_slide(velocity,FLOOR)
 	velocity.x = lerp(velocity.x,0,friction)
 	velocity.y += gravity
 	velocity.y = clamp(velocity.y,-boostForce,terminalVelocity)
@@ -106,6 +108,10 @@ func swap():
 	temp = self.dresser.position
 	self.dresser.position = partner.dresser.position
 	partner.dresser.position = temp
+	
+	collider.disabled = true
+	yield(get_tree().create_timer(0.2),"timeout")
+	collider.disabled = false
 	
 	
 	MusicController.play_SE(self.playernum, "swap")
