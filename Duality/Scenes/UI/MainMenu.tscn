@@ -21,6 +21,7 @@ animations = [ {
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
+frame = 3
 speed_scale = 0.5
 playing = true
 
@@ -63,7 +64,7 @@ __meta__ = {
 margin_left = 208.0
 margin_top = 76.0
 margin_right = 344.0
-margin_bottom = 226.0
+margin_bottom = 119.0
 theme = ExtResource( 6 )
 custom_constants/separation = 15
 script = ExtResource( 5 )
