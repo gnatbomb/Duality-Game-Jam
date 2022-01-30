@@ -4,12 +4,13 @@
 [ext_resource path="res://Scripts/Player1.gd" type="Script" id=2]
 [ext_resource path="res://Art/spr_victoryanim1.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=139]
+[sub_resource type="RectangleShape2D" id=153]
 extents = Vector2( 5.733, 8.448 )
 
 [sub_resource type="Animation" id=61]
 resource_name = "DeathLeft"
 length = 0.6
+loop = true
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -44,9 +45,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.25, 0.55 )
 }
 
-[sub_resource type="Animation" id=140]
+[sub_resource type="Animation" id=154]
 resource_name = "DeathRight"
 length = 0.6
+loop = true
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -81,7 +83,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.25, 0.55 )
 }
 
-[sub_resource type="Animation" id=141]
+[sub_resource type="Animation" id=155]
 resource_name = "FallLeft"
 length = 0.15
 step = 0.05
@@ -98,7 +100,7 @@ tracks/0/keys = {
 "values": [ 21, 23 ]
 }
 
-[sub_resource type="Animation" id=142]
+[sub_resource type="Animation" id=156]
 resource_name = "FallRight"
 length = 0.15
 step = 0.05
@@ -115,7 +117,7 @@ tracks/0/keys = {
 "values": [ 17, 19 ]
 }
 
-[sub_resource type="Animation" id=143]
+[sub_resource type="Animation" id=157]
 resource_name = "IdleLeft"
 length = 0.1
 loop = true
@@ -132,7 +134,7 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=144]
+[sub_resource type="Animation" id=158]
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -148,7 +150,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=145]
+[sub_resource type="Animation" id=159]
 resource_name = "JumpLeft"
 length = 0.25
 step = 0.05
@@ -165,7 +167,7 @@ tracks/0/keys = {
 "values": [ 8, 9, 20 ]
 }
 
-[sub_resource type="Animation" id=146]
+[sub_resource type="Animation" id=160]
 resource_name = "JumpRight"
 length = 0.25
 step = 0.05
@@ -182,10 +184,10 @@ tracks/0/keys = {
 "values": [ 12, 13, 16 ]
 }
 
-[sub_resource type="Animation" id=147]
+[sub_resource type="Animation" id=161]
 resource_name = "LandRight"
 
-[sub_resource type="Animation" id=148]
+[sub_resource type="Animation" id=162]
 resource_name = "VictoryRight"
 length = 0.4
 tracks/0/type = "value"
@@ -213,7 +215,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=149]
+[sub_resource type="Animation" id=163]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -229,7 +231,7 @@ tracks/0/keys = {
 "values": [ 5, 6, 7, 4 ]
 }
 
-[sub_resource type="Animation" id=150]
+[sub_resource type="Animation" id=164]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -349,7 +351,7 @@ transitions = [ "Idle", "Walk", SubResource( 48 ), "Walk", "Idle", SubResource( 
 start_node = "Idle"
 graph_offset = Vector2( -83, 57 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=151]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=165]
 
 [sub_resource type="CircleShape2D" id=152]
 radius = 12.0
@@ -359,6 +361,7 @@ script = ExtResource( 2 )
 playernum = 1
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 0.137113 )
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 7
@@ -367,27 +370,27 @@ vframes = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 2.087, 1.6 )
-shape = SubResource( 139 )
+shape = SubResource( 153 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/DeathLeft = SubResource( 61 )
-anims/DeathRight = SubResource( 140 )
-anims/FallLeft = SubResource( 141 )
-anims/FallRight = SubResource( 142 )
-anims/IdleLeft = SubResource( 143 )
-anims/IdleRight = SubResource( 144 )
-anims/JumpLeft = SubResource( 145 )
-anims/JumpRight = SubResource( 146 )
-anims/LandRight = SubResource( 147 )
-anims/VictoryRight = SubResource( 148 )
-anims/WalkLeft = SubResource( 149 )
-anims/WalkRight = SubResource( 150 )
+anims/DeathRight = SubResource( 154 )
+anims/FallLeft = SubResource( 155 )
+anims/FallRight = SubResource( 156 )
+anims/IdleLeft = SubResource( 157 )
+anims/IdleRight = SubResource( 158 )
+anims/JumpLeft = SubResource( 159 )
+anims/JumpRight = SubResource( 160 )
+anims/LandRight = SubResource( 161 )
+anims/VictoryRight = SubResource( 162 )
+anims/WalkLeft = SubResource( 163 )
+anims/WalkRight = SubResource( 164 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 132 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 151 )
+parameters/playback = SubResource( 165 )
 parameters/Death/blend_position = Vector2( 0, 0 )
 parameters/Fall/blend_position = Vector2( 1, 0 )
 parameters/Idle/blend_position = Vector2( 0, 0 )

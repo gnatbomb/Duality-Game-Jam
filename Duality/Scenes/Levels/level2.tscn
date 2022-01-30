@@ -968,6 +968,7 @@ points = PoolVector2Array( 0, 0, 20, 0, 20, 20, 0, 20 )
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -992,11 +993,9 @@ DresserPath = NodePath("../Dresser2")
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 43.3798, 280.356 )
-frame = 0
 
 [node name="Dresser2" parent="." instance=ExtResource( 15 )]
 position = Vector2( 518, 280 )
-frame = 3
 
 [node name="TileMap" parent="." instance=ExtResource( 9 )]
 tile_data = PoolIntArray( 393228, 1, 262156, 393231, 1, 262156 )
