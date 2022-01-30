@@ -265,14 +265,15 @@ tile_data = PoolIntArray( 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393224, 4, 0
 tile_data = PoolIntArray( 327688, 0, 0 )
 
 [node name="Dresser1" parent="." instance=ExtResource( 6 )]
-
-[node name="Player1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512.991, 119.88 )
-partnerPath = NodePath("../Player2")
+frame = 1
 
 [node name="Player2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 480.428, 117.52 )
 partnerPath = NodePath("../Player1")
+
+[node name="Player1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512.991, 119.88 )
+partnerPath = NodePath("../Player2")
 
 [editable path="Spikes"]
 [editable path="Springs"]
