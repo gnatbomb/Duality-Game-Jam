@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Player1.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.73291, 8.44751 )
+extents = Vector2( 5.733, 8.448 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "FallLeft"
@@ -252,3 +252,11 @@ parameters/Fall/blend_position = Vector2( 1, 0 )
 parameters/Idle/blend_position = Vector2( 1, 0 )
 parameters/Jump/blend_position = Vector2( 1, 0 )
 parameters/Walk/blend_position = Vector2( 1, 0 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.514878, 1.45131 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -219,16 +219,16 @@ graph_offset = Vector2( -83, 57 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=29]
 
-[node name="Player2" type="KinematicBody2D"]
+[node name="Player2" type="KinematicBody2D" groups=["p2"]]
 script = ExtResource( 2 )
 playernum = 2
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="." groups=["p2"]]
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["p2"]]
 position = Vector2( -0.514878, 1.45131 )
 shape = SubResource( 1 )
 
