@@ -19,6 +19,7 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 var jumpOnCooldown = false
+var victory = false
 var controlDict = {}
 onready var partner = get_node(partnerPath)
 onready var startPosition = get_parent().find_node("Dresser1").position
@@ -38,6 +39,9 @@ func _setControls():
 func inputHandler(delta):
 	var input_vector = Vector2.ZERO	
 	var on_floor = is_on_floor()
+	if (victory):
+		MusicController.play_SE(0, "embrace")
+		victory = false
 	
 	if Input.is_action_just_pressed(controlDict["swap"]):
 		swap()
@@ -102,7 +106,8 @@ func hitSpring():
 	velocity.y = -boostForce
 	MusicController.play_SE(self.playernum, "spring")
 	
-	
+func win():
+	victory = true
 	
 	
 	
