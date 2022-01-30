@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/LoversEmbrace.ogg-26405f04ca78631425d5266b322c2cb3.oggstr"
+
+[deps]
+
+source_file="res://SE/LoversEmbrace.ogg"
+dest_files=[ "res://.import/LoversEmbrace.ogg-26405f04ca78631425d5266b322c2cb3.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
