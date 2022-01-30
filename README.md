@@ -5,7 +5,7 @@ A 2d platformer game where you reunite lost socks.
 Play the game here: 
 
 ## credits
-Yalmaz Abdullah
-Samuel Anderson
-Natalie Bombardieri
-Ronan Sandoval
+- Yalmaz Abdullah
+- Samuel Anderson
+- Natalie Bombardieri
+- Ronan Sandoval
