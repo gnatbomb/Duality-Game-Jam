@@ -966,6 +966,7 @@ points = PoolVector2Array( 0, 0, 20, 0, 20, 20, 0, 20 )
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
+frame = 3
 speed_scale = 0.5
 playing = true
 
@@ -986,7 +987,22 @@ position = Vector2( 501.234, 290.879 )
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 43.3798, 280.356 )
-frame = 2
+frame = 1
 
 [node name="TileMap" parent="." instance=ExtResource( 9 )]
 tile_data = PoolIntArray( 393228, 1, 262156, 393231, 1, 262156 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 204.449
+margin_top = 66.795
+margin_right = 358.449
+margin_bottom = 102.795
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Press W / up 
+to jump!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

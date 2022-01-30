@@ -1162,6 +1162,7 @@ resource_local_to_scene = true
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -1184,6 +1185,23 @@ position = Vector2( 515.864, 290.879 )
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 43.3798, 280.356 )
-frame = 3
+frame = 1
+
+[node name="Label" type="Label" parent="."]
+margin_left = 162.429
+margin_top = 139.265
+margin_right = 384.429
+margin_bottom = 204.265
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Reach the other player to complete the level!
+
+Press A or D / left or right to walk."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = -0.0263158
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [editable path="Spikes"]
