@@ -324,7 +324,7 @@ vframes = 7
 [node name="CanvasModulate" type="CanvasModulate" parent="Sprite"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.514878, 1.45131 )
+position = Vector2( 2.087, 1.6 )
 shape = SubResource( 121 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
