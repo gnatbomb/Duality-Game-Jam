@@ -9,6 +9,7 @@ extents = Vector2( 5.73291, 8.44751 )
 [sub_resource type="Animation" id=2]
 resource_name = "DeathLeft"
 length = 0.6
+loop = true
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -46,6 +47,7 @@ tracks/2/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "DeathRight"
 length = 0.6
+loop = true
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -291,9 +293,9 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=32]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
 
-[sub_resource type="AnimationNodeStateMachine" id=38]
+[sub_resource type="AnimationNodeStateMachine" id=34]
 states/Death/node = SubResource( 15 )
 states/Death/position = Vector2( 22, 118 )
 states/Fall/node = SubResource( 18 )
@@ -304,7 +306,7 @@ states/Jump/node = SubResource( 24 )
 states/Jump/position = Vector2( 431, 224 )
 states/Walk/node = SubResource( 27 )
 states/Walk/position = Vector2( 431, 119 )
-transitions = [ "Idle", "Walk", SubResource( 28 ), "Walk", "Idle", SubResource( 29 ), "Walk", "Jump", SubResource( 30 ), "Jump", "Fall", SubResource( 31 ), "Fall", "Idle", SubResource( 32 ), "Death", "Idle", SubResource( 37 ) ]
+transitions = [ "Idle", "Walk", SubResource( 28 ), "Walk", "Idle", SubResource( 29 ), "Walk", "Jump", SubResource( 30 ), "Jump", "Fall", SubResource( 31 ), "Fall", "Idle", SubResource( 32 ), "Death", "Idle", SubResource( 33 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -83, 57 )
 
@@ -342,7 +344,7 @@ anims/WalkLeft = SubResource( 11 )
 anims/WalkRight = SubResource( 12 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 38 )
+tree_root = SubResource( 34 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 35 )
