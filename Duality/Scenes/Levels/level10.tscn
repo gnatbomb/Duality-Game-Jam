@@ -354,7 +354,6 @@ resource_local_to_scene = true
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 3
 speed_scale = 0.5
 playing = true
 
@@ -363,9 +362,13 @@ tile_data = PoolIntArray( 65555, 13, 0, 65557, 13, 0, 131091, 12, 0, 131093, 12,
 
 [node name="Player1" parent="." instance=ExtResource( 12 )]
 position = Vector2( 170, 270 )
+partnerPath = NodePath("../Player2")
+DresserPath = NodePath("../Dresser1")
 
 [node name="Player2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 440, 210 )
+partnerPath = NodePath("../Player1")
+DresserPath = NodePath("../Dresser1")
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 140, 260 )

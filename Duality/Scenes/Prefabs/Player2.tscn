@@ -313,6 +313,8 @@ graph_offset = Vector2( -83, 57 )
 [node name="Player2" type="KinematicBody2D" groups=[
 "p2",
 ]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 2 )
 playernum = 2
 

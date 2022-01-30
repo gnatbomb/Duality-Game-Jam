@@ -5,4 +5,4 @@ func _setControls():
 
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "Player2":
-		self.win()
+		self.setVictoryFlag()
