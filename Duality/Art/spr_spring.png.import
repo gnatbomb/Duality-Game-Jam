@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_sock2jumpleft.png-f799f124c08324780ad47b9b22274e57.stex"
+path="res://.import/spr_spring.png-cfe036ea5a0c815b5678d47bdc86d4e5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/spr_sock2jumpleft.png"
-dest_files=[ "res://.import/spr_sock2jumpleft.png-f799f124c08324780ad47b9b22274e57.stex" ]
+source_file="res://Art/spr_spring.png"
+dest_files=[ "res://.import/spr_spring.png-cfe036ea5a0c815b5678d47bdc86d4e5.stex" ]
 
 [params]
 
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

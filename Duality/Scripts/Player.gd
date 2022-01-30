@@ -7,9 +7,9 @@ const FLOOR = Vector2(0,-1)
 export (float) var speed = 100
 export (float) var gravity = 20
 export (float) var jumpForce = 350
+export (float) var boostForce = 450
 export (float,0,1) var friction = 0.325
 export var terminalVelocity = 250
-export (Vector2) var startPosition
 export var partnerPath:NodePath
 
 #GLOBALS
@@ -20,10 +20,9 @@ onready var animationState = animationTree.get("parameters/playback")
 var jumpOnCooldown = false
 var controlDict = {}
 onready var partner = get_node(partnerPath)
+onready var startPosition = get_parent().find_node("Dresser1").position
 
 func _ready():
-#	startPosition = get_parent().find_node("Dresser1").position
-#	position = startPosition
 	_setControls()
 	
 func _process(delta):
@@ -90,6 +89,8 @@ func hitSpike():
 
 func hitSpring():
 	print("bounce!")
+	animationState.travel("Jump")
+	velocity.y = -boostForce
 	
 	
 	

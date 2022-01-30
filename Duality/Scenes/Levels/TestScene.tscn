@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/Prefabs/Player1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Prefabs/Platform.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Art/Tiles/spr_spikes.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Prefabs/Player2.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Levels/TestScene.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Prefabs/Spring.tscn" type="PackedScene" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -235,22 +236,22 @@ position = Vector2( 160.813, 96.7304 )
 position = Vector2( 842.864, 107.661 )
 
 [node name="Platform2" parent="Platforms (old)" instance=ExtResource( 2 )]
-position = Vector2( 387.496, 53.8306 )
+position = Vector2( 336.772, 59.17 )
 
 [node name="Platform" parent="Platforms (old)" instance=ExtResource( 2 )]
-position = Vector2( 354.122, 53.8306 )
+position = Vector2( 303.398, 59.17 )
 
 [node name="Platform3" parent="Platforms (old)" instance=ExtResource( 2 )]
-position = Vector2( 320.187, 53.8306 )
+position = Vector2( 269.463, 59.17 )
 
 [node name="Platform4" parent="Platforms (old)" instance=ExtResource( 2 )]
-position = Vector2( 420.904, 53.7993 )
+position = Vector2( 370.18, 59.1387 )
 
 [node name="Platform5" parent="Platforms (old)" instance=ExtResource( 2 )]
-position = Vector2( 454.806, 53.8306 )
+position = Vector2( 404.082, 59.17 )
 
 [node name="Platform6" parent="Platforms (old)" instance=ExtResource( 2 )]
-position = Vector2( 285.086, 54.5798 )
+position = Vector2( 234.362, 59.9192 )
 
 [node name="Tilemap" parent="." instance=ExtResource( 3 )]
 
@@ -259,7 +260,7 @@ position = Vector2( 285.086, 54.5798 )
 [node name="SpikeMap" parent="Spikes" index="0"]
 tile_set = SubResource( 10 )
 cell_size = Vector2( 20, 20 )
-tile_data = PoolIntArray( 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393224, 4, 0, 393225, 2, 0, 458755, 6, 0, 458761, 2, 0, 524291, 6, 0, 524297, 2, 0, 589827, 6, 0, 589833, 2, 0, 655363, 6, 0, 655369, 2, 0, 720899, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720905, 1, 0, 720906, 1, 0 )
+tile_data = PoolIntArray( 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393224, 4, 0, 393225, 2, 0, 393243, 1, 0, 393244, 1, 0, 458755, 6, 0, 458761, 2, 0, 524291, 6, 0, 524297, 2, 0, 589827, 6, 0, 589833, 2, 0, 655363, 6, 0, 655369, 2, 0, 720899, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720905, 1, 0, 720906, 1, 0 )
 
 [node name="Springs" parent="." instance=ExtResource( 5 )]
 
@@ -294,6 +295,9 @@ margin_top = 24.0
 margin_right = 55.0
 margin_bottom = 44.0
 text = "Steppy"
+
+[node name="Spring" parent="." instance=ExtResource( 14 )]
+position = Vector2( 424.183, 118.284 )
 
 [connection signal="pressed" from="VBoxContainer/Death" to="." method="play_death"]
 [connection signal="pressed" from="VBoxContainer/Steppy" to="." method="play_steppy"]
