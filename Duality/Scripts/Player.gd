@@ -97,7 +97,6 @@ func hitSpike():
 	position = startPosition
 
 func hitSpring():
-	print("bounce!")
 	animationState.travel("Jump")
 	velocity.y = -boostForce
 	MusicController.play_SE(self.playernum, "spring")
