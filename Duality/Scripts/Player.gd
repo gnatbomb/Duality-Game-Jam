@@ -22,7 +22,7 @@ var controlDict = {}
 onready var partner = get_node(partnerPath)
 
 func _ready():
-#	startPosition = get_parent().find_node("Dresser1").position
+	startPosition = get_parent().find_node("Dresser1").position
 #	position = startPosition
 	_setControls()
 	

@@ -22,28 +22,28 @@ animations = [ {
 } ]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 10, 10, 20, 10, 20, 20, 10, 20 )
+points = PoolVector2Array( 14.5486, 14.495, 20, 14.495, 20, 20, 14.6832, 19.7439 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 0, 10, 20, 10, 20, 20, 0, 20 )
+points = PoolVector2Array( 0, 13.4183, 19.8511, 13.5529, 20, 20, 0, 20 )
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 10, 0, 20, 0, 20, 20, 10, 20 )
+points = PoolVector2Array( 13.6065, 0.0131073, 20, 0, 20, 20, 13.6065, 19.7975 )
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
-points = PoolVector2Array( 10, 0, 20, 0, 20, 10, 10, 10 )
+points = PoolVector2Array( 14.2794, 0, 20, 0, 20, 5.58482, 14.414, 5.45023 )
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 0, 0, 20, 0, 20, 10, 0, 10 )
+points = PoolVector2Array( 0, 0, 20, 0, 20, 6.39235, 0, 6.25775 )
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 0, 0, 10, 0, 10, 10, 0, 10 )
+points = PoolVector2Array( 0, 0, 5.50383, 0, 5.50383, 5.58482, 0, 5.58482 )
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
-points = PoolVector2Array( 0, 0, 10, 0, 10, 20, 0, 20 )
+points = PoolVector2Array( 0, 0, 6.31136, 0, 6.58052, 20, 0, 20 )
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
-points = PoolVector2Array( 0, 10, 10, 10, 10, 20, 0, 20 )
+points = PoolVector2Array( 0, 14.6296, 5.23465, 14.6296, 5.36923, 20, 0, 20 )
 
 [sub_resource type="TileSet" id=10]
 resource_local_to_scene = true
@@ -219,10 +219,10 @@ resource_local_to_scene = true
 [node name="TestLevel" type="Node2D"]
 
 [node name="Background" type="AnimatedSprite" parent="."]
-position = Vector2( 283.889, 157.5 )
+position = Vector2( 283.555, 159.502 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 3
+frame = 2
 speed_scale = 0.5
 playing = true
 
@@ -233,22 +233,22 @@ position = Vector2( 160.813, 96.7304 )
 position = Vector2( 842.864, 107.661 )
 
 [node name="Platform2" parent="Platforms (old)" instance=ExtResource( 2 )]
-position = Vector2( 387.496, 53.8306 )
+position = Vector2( 386.161, 59.5037 )
 
 [node name="Platform" parent="Platforms (old)" instance=ExtResource( 2 )]
-position = Vector2( 354.122, 53.8306 )
+position = Vector2( 352.787, 59.5037 )
 
 [node name="Platform3" parent="Platforms (old)" instance=ExtResource( 2 )]
-position = Vector2( 320.187, 53.8306 )
+position = Vector2( 318.852, 59.5037 )
 
 [node name="Platform4" parent="Platforms (old)" instance=ExtResource( 2 )]
-position = Vector2( 420.904, 53.7993 )
+position = Vector2( 419.569, 59.4724 )
 
 [node name="Platform5" parent="Platforms (old)" instance=ExtResource( 2 )]
-position = Vector2( 454.806, 53.8306 )
+position = Vector2( 453.471, 59.5037 )
 
 [node name="Platform6" parent="Platforms (old)" instance=ExtResource( 2 )]
-position = Vector2( 285.086, 54.5798 )
+position = Vector2( 283.751, 60.2529 )
 
 [node name="Tilemap" parent="." instance=ExtResource( 3 )]
 
@@ -257,7 +257,7 @@ position = Vector2( 285.086, 54.5798 )
 [node name="SpikeMap" parent="Spikes" index="0"]
 tile_set = SubResource( 10 )
 cell_size = Vector2( 20, 20 )
-tile_data = PoolIntArray( 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393224, 4, 0, 393225, 2, 0, 458755, 6, 0, 458761, 2, 0, 524291, 6, 0, 524297, 2, 0, 589827, 6, 0, 589833, 2, 0, 655363, 6, 0, 655369, 2, 0, 720899, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720905, 1, 0, 720906, 1, 0 )
+tile_data = PoolIntArray( 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393224, 4, 0, 393225, 2, 0, 393243, 1, 0, 393244, 1, 0, 458755, 6, 0, 458761, 2, 0, 524291, 6, 0, 524297, 2, 0, 589827, 6, 0, 589833, 2, 0, 655363, 6, 0, 655369, 2, 0, 720899, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720905, 1, 0, 720906, 1, 0 )
 
 [node name="Springs" parent="." instance=ExtResource( 5 )]
 
@@ -265,7 +265,11 @@ tile_data = PoolIntArray( 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393224, 4, 0
 tile_data = PoolIntArray( 327688, 0, 0 )
 
 [node name="Dresser1" parent="." instance=ExtResource( 6 )]
-frame = 1
+frame = 3
+
+[node name="Player1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512.991, 119.88 )
+partnerPath = NodePath("../Player2")
 
 [node name="Player2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 480.428, 117.52 )
