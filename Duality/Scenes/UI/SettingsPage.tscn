@@ -22,7 +22,7 @@ __meta__ = {
 }
 
 [node name="MainMenuButton" type="Button" parent="BackButton"]
-margin_right = 63.0
+margin_right = 42.0
 margin_bottom = 20.0
 text = "Back"
 

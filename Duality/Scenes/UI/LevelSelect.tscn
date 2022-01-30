@@ -44,9 +44,10 @@ __meta__ = {
 }
 
 [node name="MainMenuButton" type="Button" parent="BackButton"]
-margin_right = 63.0
+margin_right = 42.0
 margin_bottom = 20.0
 text = "Back"
 
 [connection signal="pressed" from="LevelSelectContainer/Level1Button" to="LevelSelectContainer" method="_on_Level1Button_pressed"]
+[connection signal="pressed" from="LevelSelectContainer/Level2Button" to="LevelSelectContainer" method="_on_Level2Button_pressed"]
 [connection signal="pressed" from="BackButton/MainMenuButton" to="BackButton" method="_on_MainMenuButton_pressed"]
