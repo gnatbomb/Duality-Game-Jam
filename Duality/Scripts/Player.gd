@@ -22,13 +22,16 @@ onready var animationState = animationTree.get("parameters/playback")
 var jumpOnCooldown = false
 var victory = false
 var controlDict = {}
-onready var partner = get_node(partnerPath)
+var partner
 onready var dresser = get_node(DresserPath)
 onready var collider = get_node("Area2D/searchBox")
 var alive = true
+var partner_collider
 
 func _ready():
 	_setControls()
+	partner = get_node(partnerPath)
+	partner_collider = partner.get_node("Area2D/searchBox")
 	
 func _process(delta):
 	if (alive and victory):
@@ -53,7 +56,6 @@ func inputHandler(delta):
 	if Input.is_action_just_pressed(controlDict["swap"]):
 		swap()
 		return input_vector
-	
 	if Input.is_action_pressed(controlDict["left"]):
 		input_vector.x += -1
 	if Input.is_action_pressed(controlDict["right"]):
@@ -108,11 +110,13 @@ func swap():
 	partner.dresser.position = temp
 	
 	collider.disabled = true
-	yield(get_tree().create_timer(0.2),"timeout")
-	collider.disabled = false
-	
-	
+	partner_collider.disabled = true
+
 	MusicController.play_SE(self.playernum, "swap")
+	
+	yield(get_tree(), "idle_frame")
+	collider.disabled = false
+	partner_collider.disabled = false
 
 #take logic of respawn out and into game manager!
 func hitSpike():
