@@ -27,6 +27,7 @@ onready var dresser = get_node(DresserPath)
 onready var collider = get_node("Area2D/searchBox")
 var alive = true
 var partner_collider
+var home = "res://Scenes/UI/MainMenu.tscn"
 
 func _ready():
 	_setControls()
@@ -52,6 +53,9 @@ func inputHandler(delta):
 	var input_vector = Vector2.ZERO	
 	var on_floor = is_on_floor()
 	var on_ceiling = is_on_ceiling()
+	
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().change_scene(home)
 	
 	if Input.is_action_just_pressed(controlDict["swap"]):
 		swap()
