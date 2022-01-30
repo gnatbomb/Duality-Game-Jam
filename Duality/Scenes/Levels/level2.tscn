@@ -980,6 +980,14 @@ tile_data = PoolIntArray( 65539, 13, 0, 65541, 13, 0, 65542, 13, 0, 65546, 13, 0
 
 [node name="Spikes" parent="." instance=ExtResource( 8 )]
 
+[node name="Dresser1" parent="." instance=ExtResource( 13 )]
+position = Vector2( 43.3798, 280.356 )
+frame = 2
+
+[node name="Dresser2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 518, 280 )
+frame = 1
+
 [node name="Player1" parent="." instance=ExtResource( 12 )]
 position = Vector2( 64.2227, 290.879 )
 partnerPath = NodePath("../Player2")
@@ -989,14 +997,6 @@ DresserPath = NodePath("../Dresser1")
 position = Vector2( 501.234, 290.879 )
 partnerPath = NodePath("../Player1")
 DresserPath = NodePath("../Dresser2")
-
-[node name="Dresser1" parent="." instance=ExtResource( 13 )]
-position = Vector2( 43.3798, 280.356 )
-frame = 1
-
-[node name="Dresser2" parent="." instance=ExtResource( 15 )]
-position = Vector2( 518, 280 )
-frame = 0
 
 [node name="TileMap" parent="." instance=ExtResource( 9 )]
 tile_data = PoolIntArray( 393228, 1, 262156, 393231, 1, 262156 )

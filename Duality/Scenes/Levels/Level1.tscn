@@ -1164,7 +1164,7 @@ resource_local_to_scene = true
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 1
+frame = 3
 speed_scale = 0.5
 playing = true
 
@@ -1179,6 +1179,13 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 1, -65535, 0, 1, -65534, 0, 1, -6
 [node name="SpikeMap" parent="Spikes" index="0"]
 tile_set = SubResource( 98 )
 
+[node name="Dresser1" parent="." instance=ExtResource( 13 )]
+position = Vector2( 43.3798, 280.356 )
+
+[node name="Dresser2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 506, 281 )
+frame = 0
+
 [node name="Player1" parent="." instance=ExtResource( 12 )]
 position = Vector2( 64.2227, 290.879 )
 partnerPath = NodePath("../Player2")
@@ -1188,14 +1195,6 @@ DresserPath = NodePath("../Dresser1")
 position = Vector2( 515.864, 290.879 )
 partnerPath = NodePath("../Player1")
 DresserPath = NodePath("../Dresser2")
-
-[node name="Dresser1" parent="." instance=ExtResource( 13 )]
-position = Vector2( 43.3798, 280.356 )
-frame = 2
-
-[node name="Dresser2" parent="." instance=ExtResource( 15 )]
-position = Vector2( 506, 281 )
-frame = 3
 
 [node name="Label" type="Label" parent="."]
 margin_left = 162.429
