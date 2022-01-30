@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Art/Background/bg1.png" type="Texture" id=1]
+[ext_resource path="res://Art/Background/bg4.png" type="Texture" id=2]
+[ext_resource path="res://Art/Background/bg3.png" type="Texture" id=3]
+[ext_resource path="res://Art/Background/bg2.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Background" type="AnimatedSprite" parent="."]
+position = Vector2( 283.889, 157.5 )
+scale = Vector2( 0.598148, 0.598148 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.5
+playing = true
+
+[node name="LevelSelectContainer" type="VBoxContainer" parent="."]
+margin_left = 237.0
+margin_top = 167.0
+margin_right = 295.0
+margin_bottom = 211.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="LevelSelectContainer"]
+margin_right = 63.0
+margin_bottom = 20.0
+text = "Start"
+
+[node name="LevelsButton" type="Button" parent="LevelSelectContainer"]
+margin_top = 24.0
+margin_right = 63.0
+margin_bottom = 44.0
+text = "Levels"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingButton" type="Button" parent="LevelSelectContainer"]
+margin_top = 48.0
+margin_right = 63.0
+margin_bottom = 68.0
+text = "Settings"
+
+[connection signal="pressed" from="LevelSelectContainer/StartButton" to="LevelSelectContainer" method="_on_Level1Button_pressed"]
+[connection signal="pressed" from="LevelSelectContainer/LevelsButton" to="LevelSelectContainer" method="_on_Level2Button_pressed"]
+[connection signal="pressed" from="LevelSelectContainer/SettingButton" to="LevelSelectContainer" method="_on_Level2Button_pressed"]
