@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/LoversLost.ogg-8d26e88608260e45fa2efc8b8fee6eef.oggstr"
+
+[deps]
+
+source_file="res://Audio/LoversLost.ogg"
+dest_files=[ "res://.import/LoversLost.ogg-8d26e88608260e45fa2efc8b8fee6eef.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
