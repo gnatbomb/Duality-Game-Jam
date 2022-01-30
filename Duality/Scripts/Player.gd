@@ -62,6 +62,7 @@ func inputHandler(delta):
 		animationTree.set("parameters/Walk/blend_position",input_vector)
 		animationTree.set("parameters/Jump/blend_position",input_vector)
 		animationTree.set("parameters/Fall/blend_position",input_vector)
+		animationTree.set("parameters/Death/blend_position",input_vector)
 		if(on_floor):
 			animationState.travel("Walk")
 			MusicController.play_SE(self.playernum, "steppy")
@@ -85,7 +86,6 @@ func inputHandler(delta):
 	velocity = move_and_slide(velocity,FLOOR)
 	velocity.x = lerp(velocity.x,0,friction)
 	velocity.y += gravity
-	print(velocity.y)
 	velocity.y = clamp(velocity.y,-boostForce,terminalVelocity)
 
 func swap():
@@ -101,8 +101,10 @@ func swap():
 func hitSpike():
 #	MusicController.play_SE(self.playernum, "owie")
 #	MusicController.play_SE(self.playernum, "death")
-	alive = false
-	
+#	alive = false
+	animationState.travel("Death")
+	print(animationState.get_current_node())
+	print("died")
 #	position = startPosition
 
 func hitSpring():
