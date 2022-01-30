@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 var current_level = 0
 
@@ -26,7 +26,6 @@ var levels = [ "res://Scenes/UI/MainMenu.tscn",
 	"res://Scenes/Levels/level20.tscn",
 	"res://Scenes/Levels/level21.tscn",
 	"res://Scenes/Levels/level22.tscn",
-	"res://Scenes/Levels/level23.tscn",
 	"res://Scenes/UI/CreditsScreen.tscn"	
 ]
 

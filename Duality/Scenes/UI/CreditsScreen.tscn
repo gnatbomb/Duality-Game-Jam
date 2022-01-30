@@ -25,7 +25,6 @@ animations = [ {
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 2
 speed_scale = 0.5
 playing = true
 
@@ -33,9 +32,13 @@ playing = true
 
 [node name="Player1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 70, 290 )
+partnerPath = NodePath("../Player2")
+DresserPath = NodePath("../Dresser2")
 
 [node name="Player2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 460, 290 )
+partnerPath = NodePath("../Player1")
+DresserPath = NodePath("../Dresser2")
 
 [node name="Dresser1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 40, 280 )

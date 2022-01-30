@@ -27,7 +27,7 @@ __meta__ = {
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 speed_scale = 0.5
 playing = true
 
@@ -77,6 +77,171 @@ margin_bottom = 200.0
 theme = ExtResource( 7 )
 text = "5"
 
+[node name="Level6Button" type="Button" parent="LevelSelectContainer"]
+margin_top = 215.0
+margin_right = 90.0
+margin_bottom = 243.0
+theme = ExtResource( 7 )
+text = "6"
+
+[node name="LevelSelectContainer2" type="VBoxContainer" parent="."]
+anchor_left = 0.183
+anchor_right = 0.183
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 100.0
+margin_bottom = 250.0
+theme = ExtResource( 7 )
+custom_constants/separation = 15
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level7Button" type="Button" parent="LevelSelectContainer2"]
+margin_right = 90.0
+margin_bottom = 28.0
+theme = ExtResource( 7 )
+text = "7"
+
+[node name="Level8Button" type="Button" parent="LevelSelectContainer2"]
+margin_top = 43.0
+margin_right = 90.0
+margin_bottom = 71.0
+theme = ExtResource( 7 )
+text = "8"
+
+[node name="Level9Button" type="Button" parent="LevelSelectContainer2"]
+margin_top = 86.0
+margin_right = 90.0
+margin_bottom = 114.0
+theme = ExtResource( 7 )
+text = "9"
+
+[node name="Level10Button" type="Button" parent="LevelSelectContainer2"]
+margin_top = 129.0
+margin_right = 90.0
+margin_bottom = 157.0
+theme = ExtResource( 7 )
+text = "10"
+
+[node name="Level11Button" type="Button" parent="LevelSelectContainer2"]
+margin_top = 172.0
+margin_right = 90.0
+margin_bottom = 200.0
+theme = ExtResource( 7 )
+text = "11"
+
+[node name="Level12Button" type="Button" parent="LevelSelectContainer2"]
+margin_top = 215.0
+margin_right = 90.0
+margin_bottom = 243.0
+theme = ExtResource( 7 )
+text = "12"
+
+[node name="LevelSelectContainer3" type="VBoxContainer" parent="."]
+anchor_left = 0.366
+anchor_right = 0.366
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 100.0
+margin_bottom = 250.0
+theme = ExtResource( 7 )
+custom_constants/separation = 15
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level13Button" type="Button" parent="LevelSelectContainer3"]
+margin_right = 90.0
+margin_bottom = 28.0
+theme = ExtResource( 7 )
+text = "13"
+
+[node name="Level14Button" type="Button" parent="LevelSelectContainer3"]
+margin_top = 43.0
+margin_right = 90.0
+margin_bottom = 71.0
+theme = ExtResource( 7 )
+text = "14"
+
+[node name="Level15Button" type="Button" parent="LevelSelectContainer3"]
+margin_top = 86.0
+margin_right = 90.0
+margin_bottom = 114.0
+theme = ExtResource( 7 )
+text = "15"
+
+[node name="Level16Button" type="Button" parent="LevelSelectContainer3"]
+margin_top = 129.0
+margin_right = 90.0
+margin_bottom = 157.0
+theme = ExtResource( 7 )
+text = "16"
+
+[node name="Level17Button" type="Button" parent="LevelSelectContainer3"]
+margin_top = 172.0
+margin_right = 90.0
+margin_bottom = 200.0
+theme = ExtResource( 7 )
+text = "17"
+
+[node name="Level18Button" type="Button" parent="LevelSelectContainer3"]
+margin_top = 215.0
+margin_right = 90.0
+margin_bottom = 243.0
+theme = ExtResource( 7 )
+text = "18"
+
+[node name="LevelSelectContainer4" type="VBoxContainer" parent="."]
+anchor_left = 0.549
+anchor_right = 0.554
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 100.0
+margin_bottom = 250.0
+theme = ExtResource( 7 )
+custom_constants/separation = 15
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level19Button" type="Button" parent="LevelSelectContainer4"]
+margin_right = 92.0
+margin_bottom = 28.0
+theme = ExtResource( 7 )
+text = "19"
+
+[node name="Level20Button" type="Button" parent="LevelSelectContainer4"]
+margin_top = 43.0
+margin_right = 92.0
+margin_bottom = 71.0
+theme = ExtResource( 7 )
+text = "20"
+
+[node name="Level21Button" type="Button" parent="LevelSelectContainer4"]
+margin_top = 86.0
+margin_right = 92.0
+margin_bottom = 114.0
+theme = ExtResource( 7 )
+text = "21"
+
+[node name="Level22Button" type="Button" parent="LevelSelectContainer4"]
+margin_top = 129.0
+margin_right = 92.0
+margin_bottom = 157.0
+theme = ExtResource( 7 )
+text = "22"
+
+[node name="Level23Button" type="Button" parent="LevelSelectContainer4"]
+margin_top = 172.0
+margin_right = 92.0
+margin_bottom = 200.0
+theme = ExtResource( 7 )
+text = "Credits"
+
 [node name="BackButton" type="VBoxContainer" parent="."]
 anchor_top = 0.941
 anchor_right = 1.0
@@ -101,4 +266,22 @@ text = "Back"
 [connection signal="pressed" from="LevelSelectContainer/Level3Button" to="LevelSelectContainer" method="open_level" binds= [ 3 ]]
 [connection signal="pressed" from="LevelSelectContainer/Level4Button" to="LevelSelectContainer" method="open_level" binds= [ 4 ]]
 [connection signal="pressed" from="LevelSelectContainer/Level5Button" to="LevelSelectContainer" method="open_level" binds= [ 5 ]]
+[connection signal="pressed" from="LevelSelectContainer/Level6Button" to="LevelSelectContainer" method="open_level" binds= [ 6 ]]
+[connection signal="pressed" from="LevelSelectContainer2/Level7Button" to="LevelSelectContainer2" method="open_level" binds= [ 7 ]]
+[connection signal="pressed" from="LevelSelectContainer2/Level8Button" to="LevelSelectContainer2" method="open_level" binds= [ 8 ]]
+[connection signal="pressed" from="LevelSelectContainer2/Level9Button" to="LevelSelectContainer2" method="open_level" binds= [ 9 ]]
+[connection signal="pressed" from="LevelSelectContainer2/Level10Button" to="LevelSelectContainer2" method="open_level" binds= [ 10 ]]
+[connection signal="pressed" from="LevelSelectContainer2/Level11Button" to="LevelSelectContainer2" method="open_level" binds= [ 11 ]]
+[connection signal="pressed" from="LevelSelectContainer2/Level12Button" to="LevelSelectContainer2" method="open_level" binds= [ 12 ]]
+[connection signal="pressed" from="LevelSelectContainer3/Level13Button" to="LevelSelectContainer3" method="open_level" binds= [ 13 ]]
+[connection signal="pressed" from="LevelSelectContainer3/Level14Button" to="LevelSelectContainer3" method="open_level" binds= [ 14 ]]
+[connection signal="pressed" from="LevelSelectContainer3/Level15Button" to="LevelSelectContainer3" method="open_level" binds= [ 15 ]]
+[connection signal="pressed" from="LevelSelectContainer3/Level16Button" to="LevelSelectContainer3" method="open_level" binds= [ 16 ]]
+[connection signal="pressed" from="LevelSelectContainer3/Level17Button" to="LevelSelectContainer3" method="open_level" binds= [ 17 ]]
+[connection signal="pressed" from="LevelSelectContainer3/Level18Button" to="LevelSelectContainer3" method="open_level" binds= [ 18 ]]
+[connection signal="pressed" from="LevelSelectContainer4/Level19Button" to="LevelSelectContainer4" method="open_level" binds= [ 19 ]]
+[connection signal="pressed" from="LevelSelectContainer4/Level20Button" to="LevelSelectContainer4" method="open_level" binds= [ 20 ]]
+[connection signal="pressed" from="LevelSelectContainer4/Level21Button" to="LevelSelectContainer4" method="open_level" binds= [ 21 ]]
+[connection signal="pressed" from="LevelSelectContainer4/Level22Button" to="LevelSelectContainer4" method="open_level" binds= [ 22 ]]
+[connection signal="pressed" from="LevelSelectContainer4/Level23Button" to="LevelSelectContainer4" method="open_level" binds= [ 23 ]]
 [connection signal="pressed" from="BackButton/MainMenuButton" to="BackButton" method="_on_MainMenuButton_pressed"]

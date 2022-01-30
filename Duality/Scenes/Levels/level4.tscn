@@ -355,7 +355,7 @@ resource_local_to_scene = true
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 1
+frame = 3
 speed_scale = 0.5
 playing = true
 
