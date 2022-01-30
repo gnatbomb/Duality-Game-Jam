@@ -5,9 +5,9 @@ const FLOOR = Vector2(0,-1)
 
 #EXPORTS
 export (float) var speed = 100
-export (float) var gravity = 10
-export (float) var jumpForce = 250
-export (float) var boostForce = 450
+export (float) var gravity = 7
+export (float) var jumpForce = 180
+export (float) var boostForce = 290
 export (float,0,1) var friction = 0.325
 export var terminalVelocity = 250
 export var partnerPath:NodePath
@@ -79,7 +79,8 @@ func inputHandler(delta):
 	velocity = move_and_slide(velocity,FLOOR)
 	velocity.x = lerp(velocity.x,0,friction)
 	velocity.y += gravity
-	velocity.y = clamp(velocity.y,-jumpForce,terminalVelocity)
+	print(velocity.y)
+	velocity.y = clamp(velocity.y,-boostForce,terminalVelocity)
 
 func swap():
 	print(partner.position,self.position)
