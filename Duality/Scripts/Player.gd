@@ -5,7 +5,7 @@ const FLOOR = Vector2(0,-1)
 
 #EXPORTS
 export (float) var speed = 100
-export (float) var gravity = 20
+export (float) var gravity = 7
 export (float) var jumpForce = 350
 export (float) var boostForce = 450
 export (float,0,1) var friction = 0.325
