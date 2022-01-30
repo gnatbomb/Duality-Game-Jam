@@ -27,7 +27,6 @@ __meta__ = {
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -45,14 +44,14 @@ __meta__ = {
 
 [node name="Level1Button" type="Button" parent="LevelSelectContainer"]
 margin_right = 90.0
-margin_bottom = 24.0
+margin_bottom = 28.0
 theme = ExtResource( 7 )
 text = "1"
 
 [node name="Level2Button" type="Button" parent="LevelSelectContainer"]
-margin_top = 39.0
+margin_top = 43.0
 margin_right = 90.0
-margin_bottom = 63.0
+margin_bottom = 71.0
 theme = ExtResource( 7 )
 text = "2"
 
@@ -70,8 +69,8 @@ __meta__ = {
 }
 
 [node name="MainMenuButton" type="Button" parent="BackButton"]
-margin_right = 38.0
-margin_bottom = 24.0
+margin_right = 42.0
+margin_bottom = 28.0
 theme = ExtResource( 7 )
 text = "Back"
 

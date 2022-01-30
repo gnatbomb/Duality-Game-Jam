@@ -18,6 +18,8 @@ func _ready():
 
 func _on_Level1Button_pressed():
 	get_tree().change_scene("res://Scenes/Levels/Level1.tscn")
+	MusicController.play_SE(0, "open")
 
 func _on_Level2Button_pressed():
 	get_tree().change_scene("res://Scenes/Levels/Level1.tscn")
+	MusicController.play_SE(0, "open")
