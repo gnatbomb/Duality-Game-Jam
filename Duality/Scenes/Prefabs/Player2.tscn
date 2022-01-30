@@ -312,25 +312,19 @@ graph_offset = Vector2( -83, 57 )
 
 [sub_resource type="CircleShape2D" id=36]
 
-[node name="Player2" type="KinematicBody2D" groups=[
-"p2",
-]]
+[node name="Player2" type="KinematicBody2D" groups=["p2"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 2 )
 playernum = 2
 
-[node name="Sprite" type="Sprite" parent="." groups=[
-"p2",
-]]
+[node name="Sprite" type="Sprite" parent="." groups=["p2"]]
 position = Vector2( 0, 0.137113 )
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
-"p2",
-]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["p2"]]
 position = Vector2( 2.08652, 1.59996 )
 shape = SubResource( 1 )
 

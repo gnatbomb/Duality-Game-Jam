@@ -1,8 +1,8 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Art/sock1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player1.gd" type="Script" id=2]
-[ext_resource path="res://Art/spr_victoryanim1.png" type="Texture" id=3]
+[ext_resource path="res://Art/spr_victoryanim2.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=153]
 extents = Vector2( 5.733, 8.448 )
@@ -10,7 +10,6 @@ extents = Vector2( 5.733, 8.448 )
 [sub_resource type="Animation" id=61]
 resource_name = "DeathLeft"
 length = 0.6
-loop = true
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -190,30 +189,6 @@ resource_name = "LandRight"
 [sub_resource type="Animation" id=162]
 resource_name = "VictoryRight"
 length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite2:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite2:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
 
 [sub_resource type="Animation" id=163]
 length = 0.4
@@ -356,6 +331,30 @@ graph_offset = Vector2( -83, 57 )
 [sub_resource type="CircleShape2D" id=152]
 radius = 12.0
 
+[sub_resource type="AtlasTexture" id=166]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 40, 20 )
+
+[sub_resource type="AtlasTexture" id=167]
+atlas = ExtResource( 3 )
+region = Rect2( 40, 0, 40, 20 )
+
+[sub_resource type="AtlasTexture" id=168]
+atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 40, 20 )
+
+[sub_resource type="AtlasTexture" id=169]
+atlas = ExtResource( 3 )
+region = Rect2( 120, 0, 40, 20 )
+
+[sub_resource type="SpriteFrames" id=170]
+animations = [ {
+"frames": [ SubResource( 166 ), SubResource( 167 ), SubResource( 168 ), SubResource( 169 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="Player1" type="KinematicBody2D"]
 script = ExtResource( 2 )
 playernum = 1
@@ -406,10 +405,10 @@ collision_mask = 2
 position = Vector2( 0, 2 )
 shape = SubResource( 152 )
 
-[node name="Sprite2" type="Sprite" parent="."]
+[node name="Smooch" type="AnimatedSprite" parent="."]
 visible = false
-position = Vector2( 10.345, 1.16798 )
-texture = ExtResource( 3 )
-hframes = 4
+position = Vector2( 7, 1 )
+frames = SubResource( 170 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="animation_finished" from="Smooch" to="." method="_on_AnimatedSprite_animation_finished"]

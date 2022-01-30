@@ -35,7 +35,7 @@ func _ready():
 	
 func _process(delta):
 	if (alive and victory):
-		win()
+		return
 		
 	if(alive and outOfFrame()):
 		inputHandler(delta)
@@ -132,7 +132,6 @@ func hitSpring():
 	MusicController.play_SE(self.playernum, "spring")
 
 func setVictoryFlag():
-	MusicController.play_SE(0, "embrace")
 	victory = true
 	
 func win():
