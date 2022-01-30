@@ -1194,11 +1194,11 @@ DresserPath = NodePath("../Dresser2")
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 43.3798, 280.356 )
-frame = 0
+frame = 1
 
 [node name="Dresser2" parent="." instance=ExtResource( 15 )]
 position = Vector2( 506, 281 )
-frame = 1
+frame = 2
 
 [node name="Label" type="Label" parent="."]
 margin_left = 162.429

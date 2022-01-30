@@ -14,6 +14,7 @@
 [ext_resource path="res://Scenes/Prefabs/Player1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Prefabs/Dresser1.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Prefabs/Dresser2.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -967,6 +968,7 @@ points = PoolVector2Array( 0, 0, 20, 0, 20, 20, 0, 20 )
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -987,10 +989,15 @@ DresserPath = NodePath("../Dresser1")
 [node name="Player2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 501.234, 290.879 )
 partnerPath = NodePath("../Player1")
-DresserPath = NodePath("../Dresser1")
+DresserPath = NodePath("../Dresser2")
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 43.3798, 280.356 )
+frame = 2
+
+[node name="Dresser2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 518, 280 )
+frame = 1
 
 [node name="TileMap" parent="." instance=ExtResource( 9 )]
 tile_data = PoolIntArray( 393228, 1, 262156, 393231, 1, 262156 )
