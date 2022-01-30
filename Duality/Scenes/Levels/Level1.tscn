@@ -1164,7 +1164,7 @@ resource_local_to_scene = true
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -1191,10 +1191,11 @@ DresserPath = NodePath("../Dresser2")
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 43.3798, 280.356 )
+frame = 2
 
 [node name="Dresser2" parent="." instance=ExtResource( 15 )]
 position = Vector2( 506, 281 )
-frame = 0
+frame = 3
 
 [node name="Label" type="Label" parent="."]
 margin_left = 162.429
