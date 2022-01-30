@@ -1,10 +1,10 @@
 # Odd Socks
 A 2d platformer game where you reunite lost socks.
 
-## game link
+## Play it!
 Play the game here: 
 
-## credits
+## Credits
 - Yalmaz Abdullah
 - Samuel Anderson
 - Natalie Bombardieri
