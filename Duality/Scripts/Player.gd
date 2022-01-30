@@ -23,12 +23,14 @@ var victory = false
 var controlDict = {}
 onready var partner = get_node(partnerPath)
 onready var startPosition = get_parent().find_node("Dresser1").position
+var alive = true
 
 func _ready():
 	_setControls()
 	
 func _process(delta):
-	inputHandler(delta)
+	if(alive):
+		inputHandler(delta)
 	return
 
 #set controls
@@ -97,9 +99,11 @@ func swap():
 
 #take logic of respawn out and into game manager!
 func hitSpike():
-	MusicController.play_SE(self.playernum, "owie")
-	MusicController.play_SE(self.playernum, "death")
-	position = startPosition
+#	MusicController.play_SE(self.playernum, "owie")
+#	MusicController.play_SE(self.playernum, "death")
+	alive = false
+	
+#	position = startPosition
 
 func hitSpring():
 	animationState.travel("Jump")
