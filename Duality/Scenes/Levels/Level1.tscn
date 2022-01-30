@@ -1184,6 +1184,6 @@ position = Vector2( 515.864, 290.879 )
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 43.3798, 280.356 )
-frame = 1
+frame = 2
 
 [editable path="Spikes"]

@@ -17,10 +17,10 @@ func _ready():
 
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://Levels/Level1.tscn")
+	get_tree().change_scene("res://Scenes/Levels/Level1.tscn")
 
 func _on_LevelsButton_pressed():
-	get_tree().change_scene("res://Scenes/LevelSelect.tscn")
-	
-func _on_SettingsButton_pressed():
-	get_tree().change_scene("res://Scenes/SettingsPage.tscn")
+	get_tree().change_scene("res://Scenes/UI/LevelSelect.tscn")
+
+func _on_SettingButton_pressed():
+	get_tree().change_scene("res://Scenes/UI/SettingsPage.tscn")
