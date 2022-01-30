@@ -30,7 +30,7 @@ func _ready():
 	_setControls()
 	
 func _process(delta):
-	if(alive):
+	if(alive and outOfFrame()):
 		inputHandler(delta)
 	else:
 		death()
@@ -114,7 +114,7 @@ func hitSpike():
 	print("died")
 
 func hitSpring():
-#	animationState.travel("Jump")
+	animationState.travel("Jump")
 	jumpOnCooldown = true
 	velocity.y = -boostForce
 	MusicController.play_SE(self.playernum, "spring")
@@ -132,6 +132,15 @@ func death():
 	position = dresser.position
 	animationState.travel("Idle")
 	alive = true
+
+func outOfFrame():
+	var x = self.position.x
+	var y = self.position.y
+	if(x<0 or x>560):
+		return false
+	if(y<0 or y>315):
+		return false
+	return true
 	
 	
 	
