@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/Prefabs/Player1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Prefabs/Platform.tscn" type="PackedScene" id=2]
@@ -13,9 +13,6 @@
 [ext_resource path="res://Art/Tiles/spr_spikes.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Prefabs/Player2.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Levels/TestScene.gd" type="Script" id=13]
-
-
-
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -227,7 +224,7 @@ script = ExtResource( 13 )
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 3
+frame = 2
 speed_scale = 0.5
 playing = true
 
@@ -270,6 +267,7 @@ tile_data = PoolIntArray( 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393224, 4, 0
 tile_data = PoolIntArray( 327688, 0, 0 )
 
 [node name="Dresser1" parent="." instance=ExtResource( 6 )]
+frame = 3
 
 [node name="Player1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512.991, 119.88 )
@@ -278,6 +276,27 @@ partnerPath = NodePath("../Player2")
 [node name="Player2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 480.428, 117.52 )
 partnerPath = NodePath("../Player1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Death" type="Button" parent="VBoxContainer"]
+margin_right = 55.0
+margin_bottom = 20.0
+text = "Death"
+
+[node name="Steppy" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 55.0
+margin_bottom = 44.0
+text = "Steppy"
+
+[connection signal="pressed" from="VBoxContainer/Death" to="." method="play_death"]
+[connection signal="pressed" from="VBoxContainer/Steppy" to="." method="play_steppy"]
 
 [editable path="Spikes"]
 [editable path="Springs"]
