@@ -11,6 +11,7 @@ export (float) var boostForce = 450
 export (float,0,1) var friction = 0.325
 export var terminalVelocity = 250
 export var partnerPath:NodePath
+export (int) var playernum
 
 #GLOBALS
 var velocity = Vector2.ZERO
@@ -57,16 +58,21 @@ func inputHandler(delta):
 		animationTree.set("parameters/Fall/blend_position",input_vector)
 		if(on_floor):
 			animationState.travel("Walk")
+			MusicController.play_SE(self.playernum, "steppy")
 		velocity.x = input_vector.x*speed
 		
 	if(input_vector.y!=0 and jumpOnCooldown==false):
 		animationState.travel("Jump")
 		velocity.y = input_vector.y*jumpForce
 		jumpOnCooldown = true
+		MusicController.play_SE(self.playernum, "jump")
+		
+	if (on_floor and jumpOnCooldown and input_vector.y == 0):
+		MusicController.play_SE(self.playernum, "land")
+		jumpOnCooldown=false
 	
 	if(input_vector==Vector2.ZERO and on_floor):
 		animationState.travel("Idle")
-		jumpOnCooldown=false
 	elif(!on_floor and velocity.y>=0 and animationState.get_current_node()!="Fall"):
 		animationState.travel("Fall")
 	
@@ -81,16 +87,20 @@ func swap():
 	self.position = partner.position
 	partner.position = temp
 	print(partner.position,self.position)
+	
+	MusicController.play_SE(self.playernum, "swap")
 
 #take logic of respawn out and into game manager!
 func hitSpike():
-	print("youch!")
+	MusicController.play_SE(self.playernum, "owie")
+	MusicController.play_SE(self.playernum, "death")
 	position = startPosition
 
 func hitSpring():
 	print("bounce!")
 	animationState.travel("Jump")
 	velocity.y = -boostForce
+	MusicController.play_SE(self.playernum, "spring")
 	
 	
 	

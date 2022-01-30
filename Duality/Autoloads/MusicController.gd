@@ -46,13 +46,23 @@ func play_SE(player, noise):
 	elif (player == 2):
 		pitchscale += pitchdif
 		
-	
-	for n in AudioPlayers.size():
-		if (! AudioPlayers[n].is_playing()):
-			AudioPlayers[n].set_pitch_scale(pitchscale)
-			AudioPlayers[n].stream = sounds[noise]
-			AudioPlayers[n].play()
-			break
+	if (noise == "steppy"):
+		if (player == 1):
+			if (! $SE11.is_playing()):
+				$SE11.set_pitch_scale(pitchscale)
+				$SE11.play()
+		else:
+			if (! $SE12.is_playing()):
+				$SE12.set_pitch_scale(pitchscale)
+				$SE12.play()
+		
+	else:
+		for n in AudioPlayers.size():
+			if (! AudioPlayers[n].is_playing()):
+				AudioPlayers[n].set_pitch_scale(pitchscale)
+				AudioPlayers[n].stream = sounds[noise]
+				AudioPlayers[n].play()
+				break
 
 
 # Called when the node enters the scene tree for the first time.
@@ -67,6 +77,8 @@ func _ready():
 	AudioPlayers.append($SE8)
 	AudioPlayers.append($SE9)
 	AudioPlayers.append($SE10)
+	$SE11.stream = steppy
+	$SE12.stream = steppy
 
 
 func play_music():
