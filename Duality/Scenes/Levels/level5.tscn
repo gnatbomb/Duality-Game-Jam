@@ -354,11 +354,12 @@ resource_local_to_scene = true
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 speed_scale = 0.5
 playing = true
 
 [node name="Decor" parent="." instance=ExtResource( 11 )]
+tile_data = PoolIntArray( 65543, 13, 0, 65546, 13, 0, 65548, 13, 0, 65552, 13, 0, 65555, 13, 0, 131079, 12, 0, 131082, 21, 0, 131084, 19, 0, 131088, 20, 0, 131091, 12, 0, 196615, 20, 0, 196627, 12, 0, 262163, 12, 0, 327699, 12, 0, 393235, 17, 0 )
 
 [node name="Player1" parent="." instance=ExtResource( 12 )]
 position = Vector2( 180, 290 )
