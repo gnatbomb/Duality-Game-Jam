@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Prefabs/Player1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Prefabs/Platform.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scenes/Prefabs/Player2.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Levels/TestScene.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/Prefabs/Spring.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Prefabs/Dresser2.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -251,7 +252,7 @@ position = Vector2( 370.18, 59.1387 )
 position = Vector2( 404.082, 59.17 )
 
 [node name="Platform6" parent="Platforms (old)" instance=ExtResource( 2 )]
-position = Vector2( 234.362, 59.9192 )
+position = Vector2( -28.4532, 111.055 )
 
 [node name="Tilemap" parent="." instance=ExtResource( 3 )]
 
@@ -268,11 +269,18 @@ tile_data = PoolIntArray( 327688, 0, 0 )
 
 [node name="Dresser1" parent="." instance=ExtResource( 6 )]
 
+[node name="Dresser2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 464.34, 119.324 )
+
 [node name="Player1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512.991, 119.88 )
+position = Vector2( 511.991, 119.88 )
+partnerPath = NodePath("../Player2")
+DresserPath = NodePath("../Dresser1")
 
 [node name="Player2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 489.257, 118.952 )
+partnerPath = NodePath("../Player1")
+DresserPath = NodePath("../Dresser2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 40.0
