@@ -14,5 +14,5 @@ func _ready():
 
 
 func _on_MainMenuButton_pressed():
-	get_tree().change_scene("res://Scenes/UI/MainMenu.tscn")
+	LevelController.go_to_level(0)
 	MusicController.play_SE(0, "close")

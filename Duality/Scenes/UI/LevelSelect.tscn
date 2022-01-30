@@ -27,6 +27,7 @@ __meta__ = {
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -43,47 +44,37 @@ __meta__ = {
 }
 
 [node name="Level1Button" type="Button" parent="LevelSelectContainer"]
-visible = false
 margin_right = 90.0
 margin_bottom = 28.0
 theme = ExtResource( 7 )
-disabled = true
 text = "1"
 
 [node name="Level2Button" type="Button" parent="LevelSelectContainer"]
-visible = false
 margin_top = 43.0
 margin_right = 90.0
 margin_bottom = 71.0
 theme = ExtResource( 7 )
-disabled = true
 text = "2"
 
 [node name="Level3Button" type="Button" parent="LevelSelectContainer"]
-visible = false
 margin_top = 86.0
 margin_right = 90.0
 margin_bottom = 114.0
 theme = ExtResource( 7 )
-disabled = true
 text = "3"
 
 [node name="Level4Button" type="Button" parent="LevelSelectContainer"]
-visible = false
 margin_top = 129.0
 margin_right = 90.0
 margin_bottom = 157.0
 theme = ExtResource( 7 )
-disabled = true
 text = "4"
 
 [node name="Level5Button" type="Button" parent="LevelSelectContainer"]
-visible = false
 margin_top = 172.0
 margin_right = 90.0
 margin_bottom = 200.0
 theme = ExtResource( 7 )
-disabled = true
 text = "5"
 
 [node name="BackButton" type="VBoxContainer" parent="."]
@@ -105,9 +96,9 @@ margin_bottom = 28.0
 theme = ExtResource( 7 )
 text = "Back"
 
-[connection signal="pressed" from="LevelSelectContainer/Level1Button" to="LevelSelectContainer" method="_on_Level1Button_pressed"]
-[connection signal="pressed" from="LevelSelectContainer/Level2Button" to="LevelSelectContainer" method="_on_Level2Button_pressed"]
-[connection signal="pressed" from="LevelSelectContainer/Level3Button" to="LevelSelectContainer" method="_on_Level3Button_pressed"]
-[connection signal="pressed" from="LevelSelectContainer/Level4Button" to="LevelSelectContainer" method="_on_Level4Button_pressed"]
-[connection signal="pressed" from="LevelSelectContainer/Level5Button" to="LevelSelectContainer" method="_on_Level5Button_pressed"]
+[connection signal="pressed" from="LevelSelectContainer/Level1Button" to="LevelSelectContainer" method="open_level" binds= [ 1 ]]
+[connection signal="pressed" from="LevelSelectContainer/Level2Button" to="LevelSelectContainer" method="open_level" binds= [ 2 ]]
+[connection signal="pressed" from="LevelSelectContainer/Level3Button" to="LevelSelectContainer" method="open_level" binds= [ 3 ]]
+[connection signal="pressed" from="LevelSelectContainer/Level4Button" to="LevelSelectContainer" method="open_level" binds= [ 4 ]]
+[connection signal="pressed" from="LevelSelectContainer/Level5Button" to="LevelSelectContainer" method="open_level" binds= [ 5 ]]
 [connection signal="pressed" from="BackButton/MainMenuButton" to="BackButton" method="_on_MainMenuButton_pressed"]

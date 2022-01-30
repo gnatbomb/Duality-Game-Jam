@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://Scenes/Levels/Level1.tscn")
+	LevelController.go_to_level(1)
 	MusicController.play_SE(0, "open")
 
 func _on_LevelsButton_pressed():
