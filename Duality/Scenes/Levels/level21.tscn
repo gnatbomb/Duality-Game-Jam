@@ -366,13 +366,16 @@ tile_data = PoolIntArray( 65546, 13, 0, 131082, 12, 0, 131093, 6, 0, 196618, 12,
 
 [node name="Player1" parent="." instance=ExtResource( 12 )]
 position = Vector2( 340, 170 )
+partnerPath = NodePath("../Player2")
+DresserPath = NodePath("../Dresser1")
 
 [node name="Player2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 490, 290 )
+partnerPath = NodePath("../Player1")
+DresserPath = NodePath("../Dresser2")
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 360, 160 )
-frame = 1
 
 [node name="Dresser2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 502, 280 )

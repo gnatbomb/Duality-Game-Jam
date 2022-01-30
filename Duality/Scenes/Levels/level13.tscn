@@ -357,6 +357,7 @@ nextLvl = "res://Scenes/Levels/level14.tscn"
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -375,7 +376,7 @@ DresserPath = NodePath("../Dresser2")
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 72, 280 )
-frame = 3
+frame = 1
 
 [node name="Dresser2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 435.817, 60.1251 )

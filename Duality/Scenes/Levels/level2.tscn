@@ -988,7 +988,7 @@ DresserPath = NodePath("../Dresser1")
 [node name="Player2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 501.234, 290.879 )
 partnerPath = NodePath("../Player1")
-DresserPath = NodePath("../Dresser1")
+DresserPath = NodePath("../Dresser2")
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 43.3798, 280.356 )
