@@ -67,12 +67,13 @@ func inputHandler(delta):
 		velocity.y = input_vector.y*jumpForce
 		jumpOnCooldown = true
 		MusicController.play_SE(self.playernum, "jump")
+		
+	if (on_floor and jumpOnCooldown and input_vector.y == 0):
+		MusicController.play_SE(self.playernum, "land")
+		jumpOnCooldown=false
 	
 	if(input_vector==Vector2.ZERO and on_floor):
 		animationState.travel("Idle")
-		if (jumpOnCooldown):
-			MusicController.play_SE(self.playernum, "land")
-		jumpOnCooldown=false
 	elif(!on_floor and velocity.y>=0 and animationState.get_current_node()!="Fall"):
 		animationState.travel("Fall")
 	
