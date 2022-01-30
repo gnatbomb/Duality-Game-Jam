@@ -98,11 +98,9 @@ func inputHandler(delta):
 	velocity.y = clamp(velocity.y,-boostForce,terminalVelocity)
 
 func swap():
-	print(partner.position,self.position)
 	var temp = self.position
 	self.position = partner.position
 	partner.position = temp
-	print(partner.position,self.position)
 	
 	#swap dressers
 	temp = self.dresser.position
