@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Prefabs/TileMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Prefabs/Spikes.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Prefabs/Springs.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Prefabs/Dresser.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Prefabs/Dresser1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/Background/bg1.png" type="Texture" id=7]
 [ext_resource path="res://Art/Background/bg2.png" type="Texture" id=8]
 [ext_resource path="res://Art/Background/bg3.png" type="Texture" id=9]
@@ -225,6 +225,7 @@ script = ExtResource( 13 )
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
+frame = 3
 speed_scale = 0.5
 playing = true
 
@@ -266,7 +267,6 @@ tile_data = PoolIntArray( 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393224, 4, 0
 tile_data = PoolIntArray( 327688, 0, 0 )
 
 [node name="Dresser1" parent="." instance=ExtResource( 6 )]
-frame = 2
 
 [node name="Player1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512.991, 119.88 )

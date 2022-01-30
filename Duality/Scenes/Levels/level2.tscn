@@ -12,7 +12,7 @@
 [ext_resource path="res://Scenes/Prefabs/Player2.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Prefabs/Decor.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Prefabs/Player1.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Prefabs/Dresser.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Prefabs/Dresser1.tscn" type="PackedScene" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -960,7 +960,7 @@ points = PoolVector2Array( 0, 0, 20, 0, 20, 20, 0, 20 )
 } ]
 8/z_index = 0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Background" type="AnimatedSprite" parent="."]
 position = Vector2( 283.889, 157.5 )
