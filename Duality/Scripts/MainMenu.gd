@@ -27,3 +27,7 @@ func _on_LevelsButton_pressed():
 func _on_SettingButton_pressed():
 	get_tree().change_scene("res://Scenes/UI/SettingsPage.tscn")
 	MusicController.play_SE(0, "open")
+
+func _on_CreditsButton_pressed():
+	LevelController.go_to_level(23)
+	MusicController.play_SE(0, "open")

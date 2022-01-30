@@ -14,7 +14,6 @@
 [ext_resource path="res://Scenes/Prefabs/Player1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Prefabs/Dresser1.tscn" type="PackedScene" id=13]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
@@ -357,7 +356,7 @@ script = ExtResource( 2 )
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 speed_scale = 0.5
 playing = true
 
