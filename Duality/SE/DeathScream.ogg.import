@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DeathScream.ogg-c7ba4408682b584342c1c3b9c31464cd.oggstr"
+
+[deps]
+
+source_file="res://SE/DeathScream.ogg"
+dest_files=[ "res://.import/DeathScream.ogg-c7ba4408682b584342c1c3b9c31464cd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
