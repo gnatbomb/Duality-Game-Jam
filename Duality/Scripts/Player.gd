@@ -12,6 +12,7 @@ export (float,0,1) var friction = 0.325
 export var terminalVelocity = 250
 export var partnerPath:NodePath
 export (int) var playernum
+export var DresserPath:NodePath
 
 #GLOBALS
 var velocity = Vector2.ZERO
@@ -22,13 +23,17 @@ var jumpOnCooldown = false
 var victory = false
 var controlDict = {}
 onready var partner = get_node(partnerPath)
-onready var startPosition = get_parent().find_node("Dresser1").position
+onready var dresser = get_node(DresserPath)
+var alive = true
 
 func _ready():
 	_setControls()
 	
 func _process(delta):
-	inputHandler(delta)
+	if(alive):
+		inputHandler(delta)
+	else:
+		death()
 	return
 
 #set controls
@@ -60,6 +65,7 @@ func inputHandler(delta):
 		animationTree.set("parameters/Walk/blend_position",input_vector)
 		animationTree.set("parameters/Jump/blend_position",input_vector)
 		animationTree.set("parameters/Fall/blend_position",input_vector)
+		animationTree.set("parameters/Death/blend_position",input_vector)
 		if(on_floor):
 			animationState.travel("Walk")
 			MusicController.play_SE(self.playernum, "steppy")
@@ -83,7 +89,6 @@ func inputHandler(delta):
 	velocity = move_and_slide(velocity,FLOOR)
 	velocity.x = lerp(velocity.x,0,friction)
 	velocity.y += gravity
-	print(velocity.y)
 	velocity.y = clamp(velocity.y,-boostForce,terminalVelocity)
 
 func swap():
@@ -93,23 +98,40 @@ func swap():
 	partner.position = temp
 	print(partner.position,self.position)
 	
+	#swap dressers
+	temp = self.dresser.position
+	self.dresser.position = partner.dresser.position
+	partner.dresser.position = temp
+	
+	
 	MusicController.play_SE(self.playernum, "swap")
 
 #take logic of respawn out and into game manager!
 func hitSpike():
-	MusicController.play_SE(self.playernum, "owie")
-	MusicController.play_SE(self.playernum, "death")
-	position = startPosition
+	MusicController.play_SE(self.playernum, "owie")	
+	#MusicController.play_SE(self.playernum, "death")
+	alive = false
+	print("died")
 
 func hitSpring():
-	animationState.travel("Jump")
+#	animationState.travel("Jump")
+	jumpOnCooldown = true
 	velocity.y = -boostForce
 	MusicController.play_SE(self.playernum, "spring")
 	
 func win():
 	victory = true
 	
-	
+func death():
+	animationState.travel("Death")
+	print(animationState.get_current_node())
+	yield(get_tree().create_timer(0.6),"timeout")
+	#NAT LOOK HERE!!! ^ above sets a timer that godot waits for right now the timer is the length of the death anim which is 0.6
+	#add the audio stuff here
+
+	position = dresser.position
+	animationState.travel("Idle")
+	alive = true
 	
 	
 	

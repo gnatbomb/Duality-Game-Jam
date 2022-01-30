@@ -1165,7 +1165,7 @@ script = ExtResource( 16 )
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 1
+frame = 3
 speed_scale = 0.5
 playing = true
 
@@ -1182,17 +1182,18 @@ tile_set = SubResource( 98 )
 
 [node name="Player1" parent="." instance=ExtResource( 12 )]
 position = Vector2( 64.2227, 290.879 )
+DresserPath = NodePath("../Dresser1")
 
 [node name="Player2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 515.864, 290.879 )
+DresserPath = NodePath("../Dresser2")
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 43.3798, 280.356 )
-frame = 3
+frame = 1
 
 [node name="Dresser2" parent="." instance=ExtResource( 15 )]
 position = Vector2( 506, 281 )
-frame = 1
 
 [node name="Label" type="Label" parent="."]
 margin_left = 162.429
