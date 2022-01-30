@@ -1166,6 +1166,7 @@ nextLvl = "res://Scenes/Levels/level2.tscn"
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
+frame = 2
 speed_scale = 0.5
 playing = true
 
