@@ -137,6 +137,7 @@ func win():
 #	yield(get_tree().create_timer(0.6),"timeout")
 	print("victory")
 	victory = false
+	LevelController.next_level()
 	
 func death():
 	animationState.travel("Death")
