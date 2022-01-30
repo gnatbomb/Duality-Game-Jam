@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Art/Tiles/spr_spikes.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/Background/bg2.png" type="Texture" id=4]
 [ext_resource path="res://Art/Background/bg3.png" type="Texture" id=5]
 [ext_resource path="res://Art/Background/bg4.png" type="Texture" id=6]
@@ -221,7 +222,6 @@ resource_local_to_scene = true
 position = Vector2( 283.889, 157.055 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 2
 speed_scale = 0.5
 playing = true
 
@@ -236,9 +236,13 @@ tile_data = PoolIntArray( 917513, 1, 0, 917514, 1, 0, 917515, 1, 0, 917516, 1, 0
 
 [node name="Player1" parent="." instance=ExtResource( 12 )]
 position = Vector2( 64.2227, 290.879 )
+partnerPath = NodePath("../Player2")
+DresserPath = NodePath("../Dresser1")
 
 [node name="Player2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 501.234, 290.879 )
+partnerPath = NodePath("../Player1")
+DresserPath = NodePath("../Dresser1")
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 43.3798, 280.356 )
@@ -259,5 +263,7 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Camera2D" parent="." instance=ExtResource( 2 )]
 
 [editable path="Spikes"]

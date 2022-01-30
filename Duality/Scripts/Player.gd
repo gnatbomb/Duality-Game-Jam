@@ -144,7 +144,6 @@ func win():
 	
 func death():
 	animationState.travel("Death")
-	print(animationState.get_current_node())
 	velocity = Vector2.ZERO
 	yield(get_tree().create_timer(0.6),"timeout")
 	#NAT LOOK HERE!!! ^ above sets a timer that godot waits for right now the timer is the length of the death anim which is 0.6

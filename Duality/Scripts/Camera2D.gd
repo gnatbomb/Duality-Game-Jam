@@ -5,9 +5,12 @@ export var max_offset = Vector2(100, 50)
 export var max_roll = 0.1 
 export (NodePath) var target 
 
-var trauma = 0.0
+var trauma = 0.01
 var trauma_power = 2  
 onready var noise = OpenSimplexNoise.new()
+onready var p1 = get_parent().get_node("Player1")
+onready var p2 = get_parent().get_node("Player2")
+
 var noise_y = 0
 
 func _ready():
@@ -17,11 +20,12 @@ func _ready():
 	noise.octaves = 2
 
 func _process(delta):
-	if target:
-		global_position = get_node(target).global_position
-	if trauma:
+	if (not p1.alive) or (not p2.alive):
+		print(trauma - decay * delta)
 		trauma = max(trauma - decay * delta, 0)
 		shake()
+	else:
+		add_trauma(0.01)
 		
 func shake():
 	var amount = pow(trauma, trauma_power)
@@ -31,6 +35,6 @@ func shake():
 	offset.y = max_offset.y * amount * noise.get_noise_2d(noise.seed*3, noise_y)
 	
 func add_trauma(amount):
-	trauma = min(trauma + amount, 1.0)
+	trauma = min(trauma + amount, 0.3)
 	
 
