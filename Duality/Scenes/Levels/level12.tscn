@@ -349,13 +349,13 @@ resource_local_to_scene = true
 } ]
 11/z_index = 0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 
 [node name="Background" type="AnimatedSprite" parent="."]
 position = Vector2( 283.889, 157.5 )
 scale = Vector2( 0.598148, 0.598148 )
 frames = SubResource( 1 )
-frame = 3
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -371,7 +371,7 @@ DresserPath = NodePath("../Dresser2")
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 112, 280 )
-frame = 1
+frame = 3
 
 [node name="Dresser2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 408.682, 280.248 )

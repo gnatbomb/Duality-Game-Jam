@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=2]
+[gd_scene load_steps=116 format=2]
 
 [ext_resource path="res://Art/Tiles/spr_tileset.png" type="Texture" id=1]
 [ext_resource path="res://Art/Tiles/spr_orangetiles.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/Prefabs/Dresser1.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Art/Tiles/spr_spikes.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/Prefabs/Dresser2.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -1190,11 +1191,12 @@ DresserPath = NodePath("../Dresser2")
 
 [node name="Dresser1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 43.3798, 280.356 )
-frame = 0
+
+frame = 1
 
 [node name="Dresser2" parent="." instance=ExtResource( 15 )]
 position = Vector2( 506, 281 )
-frame = 1
+frame = 2
 
 [node name="Label" type="Label" parent="."]
 margin_left = 162.429
@@ -1211,5 +1213,7 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Camera2D" parent="." instance=ExtResource( 17 )]
 
 [editable path="Spikes"]
