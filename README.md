@@ -3,7 +3,8 @@ A 2d platformer game where you reunite lost socks.
 
 ## Play it!
 Play the game here: https://sirsledgeworthiii.itch.io/odd-socks
-Controls: 
+ 
+## Controls: 
 - WASD for sock 1
 - arrow keys for sock 2
 - left and right / a and d move
