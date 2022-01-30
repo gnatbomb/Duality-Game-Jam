@@ -5,8 +5,8 @@ const FLOOR = Vector2(0,-1)
 
 #EXPORTS
 export (float) var speed = 100
-export (float) var gravity = 7
-export (float) var jumpForce = 350
+export (float) var gravity = 10
+export (float) var jumpForce = 250
 export (float) var boostForce = 450
 export (float,0,1) var friction = 0.325
 export var terminalVelocity = 250
@@ -97,7 +97,6 @@ func hitSpike():
 	position = startPosition
 
 func hitSpring():
-	print("bounce!")
 	animationState.travel("Jump")
 	velocity.y = -boostForce
 	MusicController.play_SE(self.playernum, "spring")
