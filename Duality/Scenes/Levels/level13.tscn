@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Art/Tiles/spr_spikes.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/LevelController.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Scenes/Prefabs/Decor.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Prefabs/Player1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Prefabs/Dresser.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -389,5 +390,8 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 1, -65535, 0, 1, -65534, 0, 1, -6
 [node name="SpikeMap" parent="Spikes" index="0"]
 tile_set = SubResource( 18 )
 tile_data = PoolIntArray( 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 1, 0, 262162, 1, 0, 262163, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 1, 0, 786454, 1, 0 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 14 )]
+target = NodePath("../Player2")
 
 [editable path="Spikes"]
