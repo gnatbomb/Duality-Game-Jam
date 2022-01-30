@@ -29,7 +29,10 @@ var alive = true
 func _ready():
 	_setControls()
 	
-func _process(delta):
+func _physics_process(delta):
+	if (victory):
+		win()
+		
 	if(alive and outOfFrame()):
 		inputHandler(delta)
 	else:
@@ -44,9 +47,7 @@ func _setControls():
 func inputHandler(delta):
 	var input_vector = Vector2.ZERO	
 	var on_floor = is_on_floor()
-	if (victory):
-		MusicController.play_SE(0, "embrace")
-		victory = false
+	var on_ceiling = is_on_ceiling()
 	
 	if Input.is_action_just_pressed(controlDict["swap"]):
 		swap()
@@ -83,10 +84,13 @@ func inputHandler(delta):
 	
 	if(input_vector==Vector2.ZERO and on_floor):
 		animationState.travel("Idle")
-	elif(!on_floor and velocity.y>=0 and animationState.get_current_node()!="Fall"):
+	elif(!on_floor and velocity.y>=7 and animationState.get_current_node()!="Fall"):
 		animationState.travel("Fall")
 	
-	velocity = move_and_slide(velocity,FLOOR)
+	if(on_ceiling):
+		velocity.y = 0
+	
+	move_and_slide(velocity,FLOOR)
 	velocity.x = lerp(velocity.x,0,friction)
 	velocity.y += gravity
 	velocity.y = clamp(velocity.y,-boostForce,terminalVelocity)
@@ -115,12 +119,20 @@ func hitSpike():
 
 func hitSpring():
 	animationState.travel("Jump")
-	jumpOnCooldown = true
+	#jumpOnCooldown = true <<-----REMOVE DOUBLE JUMP
 	velocity.y = -boostForce
 	MusicController.play_SE(self.playernum, "spring")
+
+func setVictoryFlag():
+	MusicController.play_SE(0, "embrace")
+	victory = true
 	
 func win():
-	victory = true
+#	animationTree.set("parameters/Death/blend_position",Vector2(1,0))
+#	animationState.travel("Victory")
+#	yield(get_tree().create_timer(0.6),"timeout")
+	print("victory")
+	victory = false
 	
 func death():
 	animationState.travel("Death")
@@ -142,89 +154,3 @@ func outOfFrame():
 	if(y<0 or y>315):
 		return false
 	return true
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-#---OLD OLD MOVE--
-#	if(input_vector!=Vector2.ZERO):
-#		#make sock face correct way
-#		animationTree.set("parameters/Idle/blend_position",input_vector)
-#		animationTree.set("parameters/Walk/blend_position",input_vector)
-#		animationTree.set("parameters/Jump/blend_position",input_vector)
-#		#play sock jump or walk anim
-#		if(input_vector.y!=0):
-#			print("hi")
-#			animationState.travel("Jump")
-#		if(input_vector.x!=0):
-#			animationState.travel("Walk")
-#
-#		#move sock on x
-#		velocity.x = input_vector.x*speed
-#		#move sock on y
-#		velocity.y = input_vector.y*jumpForce
-#		#the above could be cleaner with a matrix [speed,0;0,jumpForce] but ¯\_(ツ)_/¯
-#
-#	elif (is_on_floor()):
-#		animationState.travel("Idle")
-#	velocity.y += gravity
-#	velocity = move_and_slide(velocity,FLOOR)
-#	velocity.x = lerp(velocity.x,0,friction)
-
-#------OLD OLD MOVE------
-#if Input.is_action_just_pressed("up") and is_on_floor():
-#	velocity.y = -jumpForce
-#if Input.is_action_pressed("left"):
-#	velocity.x = -speed
-#	animationPlayer.play("WalkLeft")
-#if Input.is_action_pressed("right"):
-#	velocity.x = speed
-#	animationPlayer.play("WalkRight")
-
-#velocity.y += gravity
-#velocity = move_and_slide(velocity,FLOOR)
-#velocity.x = lerp(velocity.x,0,friction)
