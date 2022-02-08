@@ -35,6 +35,10 @@ func _ready():
 	partner_collider = partner.get_node("Area2D/searchBox")
 	
 func _process(delta):
+	print(gravity)
+	print(jumpForce)
+	print(delta)
+	print("################")
 	if (alive and victory):
 		return
 		
@@ -48,7 +52,7 @@ func _process(delta):
 func _setControls():
 	pass
 
-#buffer input to make jump more responsive some ideas how:https://www.reddit.com/r/godot/comments/fifs2k/how_to_jump_make_more_responsive/
+
 func inputHandler(delta):
 	var input_vector = Vector2.ZERO	
 	var on_floor = is_on_floor()
