@@ -29,6 +29,7 @@ window/stretch/aspect="keep"
 [global]
 
 main=false
+frame=false
 
 [input]
 
