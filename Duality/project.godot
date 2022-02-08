@@ -19,6 +19,10 @@ config/icon="res://icon.png"
 MusicController="*res://Autoloads/MusicController.tscn"
 LevelController="*res://Autoloads/LevelController.tscn"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [display]
 
 window/size/width=560
@@ -29,6 +33,7 @@ window/stretch/aspect="keep"
 [global]
 
 main=false
+fps=false
 
 [input]
 
