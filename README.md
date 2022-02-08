@@ -18,7 +18,7 @@ In the top right corner, click Project > Export...
 Export in your preferred format!
 
 ## Credits
-- Yalmaz Abdullah
+- Yarrow
 - Samuel Anderson
 - Natalie Bombardieri
 - Ronan Sandoval
