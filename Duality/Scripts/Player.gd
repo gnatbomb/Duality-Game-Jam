@@ -34,7 +34,7 @@ func _ready():
 	partner = get_node(partnerPath)
 	partner_collider = partner.get_node("Area2D/searchBox")
 	
-func _process(delta):
+func _physics_process(delta):
 	if (alive and victory):
 		return
 		
